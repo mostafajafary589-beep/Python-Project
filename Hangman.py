@@ -1,6 +1,12 @@
 import random
 
 class Hangman:
+
+    
+    def __init__(self, param1):
+        pass
+    
+    
     def init(self, words, max_wrong=6):
         self.word = random.choice(words)
         self.guessed = set()
