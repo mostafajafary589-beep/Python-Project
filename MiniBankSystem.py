@@ -1,10 +1,11 @@
 import json
+from multiprocessing.util import NOTSET
 from pathlib import Path
 
 FILE = Path("accounts.json")
 
 class Account:
-    def init(self, owner, balance=0):
+    def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance
 
@@ -22,8 +23,8 @@ class Account:
         return {"owner": self.owner, "balance": self.balance}
 
 class SavingsAccount(Account):
-    def init(self, owner, balance=0, rate=0.05):
-        super().init(owner, balance)
+    def __init__(self, owner, balance=0, rate=0.05):
+        super().__init__(owner, balance) 
         self.rate = rate
 
     def add_interest(self):
